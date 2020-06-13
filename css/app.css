@@ -1,0 +1,68 @@
+circle {
+    stroke: white;
+    stroke-width: 2px;
+  }
+  
+  #downloadButton{
+  font-size:20px;
+  }
+  text, .tooltip {
+    font-family: sans-serif;
+    font-size: 10pt;
+  }
+  
+  .node.area{
+    fill:black;
+  }
+  
+  .link{
+    stroke:#999;
+  stroke-width:1;
+  }
+  .hovered,.selected{
+  stroke-width:3;
+  stroke:black
+  }
+  
+  .dim {
+    fill-opacity: 0.3;
+  }
+  
+  .hide.link,.mutual.hide{
+    /* fill:rgb(175, 175, 175);
+    stroke:rgb(175, 175, 175); */
+    /* opacity:.1; */
+    stroke:rgba(186, 186, 186, 0.286);
+  stroke-width:.5;
+  }
+
+  .hide.node{
+    opacity:.2;
+  stroke-width:.5;
+  }
+  
+  .bold{
+    stroke-width:3;
+    stroke:black;
+  }
+  
+  .mutual{
+    stroke-width:3;
+    stroke:black;
+  }
+  
+  .semiBold{
+    stroke-width:2
+  }
+  
+  .tooltip {
+    opacity:.9;
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    background: rgb(231, 231, 231);
+    pointer-events: none;
+    border: 1px solid #eee;
+    border-radius: 10px;
+  }
