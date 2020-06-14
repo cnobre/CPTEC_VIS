@@ -1,3 +1,15 @@
+
+    .wrapper {  display: grid;  
+      grid-template-columns: 1fr 1fr; 
+       grid-gap: 2rem;
+      padding:1rem}
+
+      .scatter{
+          r:3px;
+          opacity:.5;
+      }
+
+
 circle {
     stroke: white;
     stroke-width: 2px;

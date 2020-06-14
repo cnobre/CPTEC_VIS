@@ -41,6 +41,7 @@ drawVis = function (graph, divID) {
 
 processGraph = function (data, temas_grouping) {
 
+    console.log(temas_grouping)
     //create dictionary of temas:
     temas = {};
     temas_grouping.columns.map(tema => {
@@ -65,7 +66,7 @@ processGraph = function (data, temas_grouping) {
         {
             type: 'area',
             name: t[0],
-            subareas: t[1],
+            subareas: t[1].filter(t=>t.length>2),
             id:Math.floor(Math.random() * Date.now()),
             neighbors:[],
             selected: false,
@@ -292,11 +293,6 @@ vis = function (graph, divID) {
     svg_internal.append("g")
         .attr('id', 'annotation')
 
-    const button = svg_internal.append('text')
-        .attr('id', 'downloadButton')
-        .text('Download Highlighted Nodes')
-        .attr('x', width - 400)
-        .attr('y', height - 100)
 
 
 
@@ -323,6 +319,7 @@ vis = function (graph, divID) {
 
 tooltip = function () {
     circles.on("mouseover.tooltip", function (d) {
+        console.log(d)
 
         let div = d3.select("body").append("div");
 
@@ -330,7 +327,7 @@ tooltip = function () {
         div.attr("class", "tooltip");
         let rows = div.append("table")
             .selectAll("tr")
-            .data(['name', 'orig_name', 'department', 'similarity'])
+            .data(d.type == 'person' ? ['name', 'orig_name', 'department', 'similarity'] : ['name','subareas'])
             .enter()
             .append("tr");
 
@@ -387,7 +384,7 @@ filterDpt = function () {
                 c.selected = false;
                 c.selectedNeighbors = [];
             })
-            links.classed('hide', l => (l.type === 'external' || l.source.department !== d.department));
+            links.classed('hide', l => (l.type === 'external' || l.type == 'area' || l.source.department !== d.department));
             circles.classed('hide', c => c.department !== d.department);
 
         }
