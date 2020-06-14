@@ -19,7 +19,7 @@ drawVis = function (graph, divID) {
         // console.log((d.department))
 
 
-        return d.numCoworkers ? colors(d.department) : 'blue'//'#8a8988';
+        return d.numCoworkers ? colors(d.department) : '#8a8988';
     }
 
     vis(graph, divID);
