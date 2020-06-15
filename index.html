@@ -34,9 +34,10 @@
 <script>
    data = d3.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTH1oDY6ZsdUAqvpqvBwzd9wc_6o0758PxSueCA8SA7gPwg76HosVOTTOOHypYdaA/pub?gid=196380871&single=true&output=csv').then(data=>{
     d3.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTH1oDY6ZsdUAqvpqvBwzd9wc_6o0758PxSueCA8SA7gPwg76HosVOTTOOHypYdaA/pub?gid=2061301187&single=true&output=csv').then(areas=>{
-        let graph = processGraph(data,areas);
-        drawVis(graph,'#results')
-        console.log(graph)
+        let graph = coWorkers(data);
+        wrapperFcn(graph,'#results')
+        graph = themes(data,areas);
+        wrapperFcn(graph,'#actions')
     })
 
    })

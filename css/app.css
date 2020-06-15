@@ -53,6 +53,17 @@ circle {
   stroke-width:.5;
   }
   
+  .toggle{
+    rx:5px;
+    ry:5px;
+    fill:#a6a6a6;
+  }
+
+  .toggleLabel{
+    font-size: 15px;
+    font-family: sans-serif;
+    cursor:pointer;
+  }
   .bold{
     stroke-width:3;
     stroke:black;
